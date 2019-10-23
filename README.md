@@ -29,6 +29,7 @@ RESPONSE : [{
 Route 2:
 
 URL :- http://localhost:5000/summarizeowntext
+
 REQUEST METHOD : POST
 
 BODY : {
