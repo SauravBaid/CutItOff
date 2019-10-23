@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import nltk
 from nltk.corpus import stopwords
 from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 import sys
 
+nltk.download("stopwords")
 
 def read_article(file_name):
 

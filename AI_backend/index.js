@@ -49,7 +49,7 @@ const getArticles = () => {
 const summarizeData = (data) => {
     return new Promise((resolve, reject) => {
         console.log(`Inside 1`);
-        var process = spawn('python3', ["./a.py", data]);
+        var process = spawn('python', ["./a.py", data]);
         console.log(`Inside 2`);
         process.stdout.on('data', (data) => {
             console.log('Inside 3');

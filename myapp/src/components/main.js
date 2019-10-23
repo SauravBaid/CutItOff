@@ -12,20 +12,22 @@ class main extends Component{
     }
     
     handleclick = (e) =>{
+        console.log(this.state)
         e.preventDefault()
-        axios.post('http://localhost:5000/', { text: this.state.data, noOfLines: this.state.lines })
+        axios.post('http://localhost:5000/summarizeowntext', { content: this.state.data })
         .then(res =>{
-            this.setState({
+            this.setState({ 
                 data: '',
                 lines: 5,
                 empty: true,
                 summarized: res.data
             })
+            console.log("Hit")
             console.log(this.state.summarized)
 
         })
         .catch(err =>{
-            console.log("Error")
+            console.log("Error",err)
         })
     }
 
@@ -42,7 +44,6 @@ class main extends Component{
     }
 
     render(){
-        console.log(this.state.summarized)
     return (
         <div className="bg-dark" style={{padding: '10%', color: 'white', fontWeight: 600,'overflow':"hidden"}} >
             <div style={{ display: 'flex'}} >
@@ -55,12 +56,13 @@ class main extends Component{
                 </div>
                 <div style={{flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}} >
                     <label style={{ display: 'flex', flex: 1, justifyContent: 'flex-start', fontSize: 20, color: 'white' }} >Summarized Paragraph</label>
-                    <textarea style={{ display: 'flex', flex:1, width: '90%', height: 250}} >{this.state.summarized}</textarea>
+                    <textarea style={{ display: 'flex', flex:1, width: '90%', height: 250, color: 'black'}} value={ this.state.summarized } ></textarea>
                 </div>
             </div>
             <div style={{ marginTop: 30, textAlign: 'center', paddingRight: 60 }} >
                 <button className="px-4 py-1 text-dark" style={{ backgroundColor: 'white', border: 'none', fontWeight: 600 }} onClick={this.handleclick} >Summarize</button>
             </div>
+            {/* <div style={{ color: 'white' }} >{ this.state.summarized }</div> */}
         </div> 
     )
     }
