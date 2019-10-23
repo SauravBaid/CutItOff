@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.brief-box{
+    width: 320px;
+    border-radius: 5px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
+    font: 14px/1.64 'Segoe UI';
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    margin: 0 20px 20px 0;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.4s ease-in-ou
+}
+.brief-box .box-img{
+    padding-bottom: 57.1875%;
+    display: block;
+    overflow: hidden;
+    width: 100%
+}
+.brief-box h2{
+    color: #00120b;
+    padding: 12px;
+}
+.brief-box p {
+    margin: 0 12px 72px;
+    color: #676e7a;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+    max-height: 198px;
+}
+.catergory{
+    padding: 5px 12px 12px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
