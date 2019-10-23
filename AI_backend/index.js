@@ -58,8 +58,10 @@ app.get('/timesofindia', async (req, res) => {
             result = await summarizeData(data[i].content);
             finalData.push({
                 originalData: data[i].content,
-                summarizeData: result,
-                heading: data[i].heading
+                summarizedData: result,
+                heading: data[i].heading,
+                imgUrl: data[i].imgUrl,
+                category: data[i].category
             });
         }
         console.log(4);
